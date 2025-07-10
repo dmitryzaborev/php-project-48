@@ -1,0 +1,34 @@
+#!/usr/bin/env php
+
+<?php
+ 
+const VERSION = '0.1.0';
+ 
+$help = <<<HELP
+Generate diff
+ 
+Usage:
+  gendiff (-h|--help)
+  gendiff (-v|--version)
+ 
+Options:
+  -h --help                     Show this screen
+  -v --version                  Show version
+HELP;
+ 
+$args = $argv;
+array_shift($args);                
+
+ 
+if (empty($args) || in_array('-h', $args, true) || in_array('--help', $args, true)) {
+    echo $help . PHP_EOL;
+    exit(0);
+}
+ 
+if (in_array('-v', $args, true) || in_array('--version', $args, true)) {
+    echo VERSION . PHP_EOL;
+    exit(0);
+}
+ 
+fwrite(STDERR, "Unknown option. Use -h for help.\n");
+exit(1);
