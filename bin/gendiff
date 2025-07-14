@@ -1,6 +1,6 @@
 #!/usr/bin/env php
-
 <?php
+// CLI entry‑point for gendiff
  
 const VERSION = '0.1.0';
  
@@ -10,15 +10,16 @@ Generate diff
 Usage:
   gendiff (-h|--help)
   gendiff (-v|--version)
+  gendiff [--format <fmt>] <firstFile> <secondFile>
  
 Options:
   -h --help                     Show this screen
   -v --version                  Show version
+  --format <fmt>                Report format [default: stylish]
 HELP;
  
 $args = $argv;
-array_shift($args);                
-
+array_shift($args);                // убираем имя скрипта
  
 if (empty($args) || in_array('-h', $args, true) || in_array('--help', $args, true)) {
     echo $help . PHP_EOL;
@@ -30,5 +31,6 @@ if (in_array('-v', $args, true) || in_array('--version', $args, true)) {
     exit(0);
 }
  
+// Здесь позже появится основная логика сравнения
 fwrite(STDERR, "Unknown option. Use -h for help.\n");
 exit(1);
