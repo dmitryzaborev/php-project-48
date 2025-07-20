@@ -2,8 +2,8 @@
 
 namespace Gendiff\Differ;
 
-use function Differ\Formatters\getFormattedDiff;
-use function Differ\Parsers\parseDataWithFormat;
+use function Gendiff\Formatters\getFormattedDiff;
+use function Gendiff\Parsers\parseDataWithFormat;
 use function Functional\sort;
 
 const ALLOWED_FILE_TYPES = ['json', 'yaml', 'yml'];
