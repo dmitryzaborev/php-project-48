@@ -4,14 +4,9 @@
     "type": "library",
     "license": "MIT",
     "autoload": {
-        "files": [
-            "src/Differ.php",
-            "src/Parsers.php",
-            "src/Formatters.php",
-            "src/Formatters/Stylish.php",
-            "src/Formatters/Plain.php",
-            "src/Formatters/Json.php"
-        ]
+        "psr-4":{
+            "Gendiff\\": "src/"
+        }
     },
     "authors": [
         {
@@ -20,7 +15,7 @@
         }
     ],
     "require": {
-        "docopt/docopt": "^1.0",
+        "docopt/docopt": "dev-master",
         "symfony/yaml": "^6.0",
         "lstrojny/functional-php": "^1.17"
     },
@@ -39,5 +34,7 @@
         "allow-plugins": {
             "phpstan/extension-installer": true
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
