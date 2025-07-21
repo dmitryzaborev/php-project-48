@@ -27,3 +27,4 @@ jobs:
           coverageCommand: make test-coverage
           coverageLocations: build/logs/clover.xml:clover
           debug: true
+          
